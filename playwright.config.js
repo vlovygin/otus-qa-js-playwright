@@ -6,14 +6,15 @@ module.exports = defineConfig({
     /* Run tests in files in parallel */
     fullyParallel: true,
     reporter: 'html',
-    use: {
-        baseURL: 'https://bankrot.fedresurs.ru/'
-    },
 
     projects: [
         {
             name: 'chromium',
-            use: {...devices['Desktop Chrome']},
+            use: {
+                ...devices['Desktop Chrome'],
+                baseURL: 'https://fedresurs.ru/'
+            },
+            // testDir: './tests/homework-12.js',
         },
         //
         // {
