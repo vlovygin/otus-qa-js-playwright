@@ -2,11 +2,12 @@ import {expect, test} from "@playwright/test"
 import {AboutProjectPage} from "../pages/about-project-page"
 import {MainPage} from "../pages/main-page"
 import {EntitySearchPage} from "../pages/entity-search-page"
+import {Header} from "../pages/components/header";
 
 test.describe('Some tests with PO pattern', () => {
     test('Navigate to main page from brand logo', async ({page}) => {
-        const aboutProjectPage = await new AboutProjectPage(page).loadPage()
-        const mainPage = await aboutProjectPage.header.navigateByBrandLogo()
+        await new AboutProjectPage(page).loadPage()
+        const mainPage = await new Header(page).navigateByBrandLogo()
 
         await expect(mainPage.page).toHaveTitle('Федресурс')
     })

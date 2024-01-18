@@ -3,8 +3,8 @@ export class BasePage {
         this.page = page
     }
 
-    get header() {
-        const Header = require('./components/header')
-        return new Header(this.page)
-    }
+    // get header() {
+    //     const { Header } = require('./components/header')
+    //     return new Header(this.page)
+    // }
 }
