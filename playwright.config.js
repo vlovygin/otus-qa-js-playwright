@@ -2,11 +2,15 @@ import {defineConfig, devices} from '@playwright/test';
 
 
 module.exports = defineConfig({
-    testDir: './tests',
+    testDir: './main/tests',
     /* Run tests in files in parallel */
     fullyParallel: true,
     reporter: 'html',
-
+    use: {
+        screenshot: 'only-on-failure',
+        video: 'on',
+        trace: 'on-first-retry',
+    },
     projects: [
         {
             name: 'chromium',

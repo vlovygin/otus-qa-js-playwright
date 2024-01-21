@@ -1,0 +1,11 @@
+services:
+
+  app:
+    tty: true
+    build: .
+    image: otus-homework-tests
+    volumes:
+      - ./main:/work/main
+      - ./run.sh:/work/run.sh
+      - ./test-results:/work/test-results
+    command: ["./run.sh"]
